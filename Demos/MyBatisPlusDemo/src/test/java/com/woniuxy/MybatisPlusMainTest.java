@@ -14,6 +14,10 @@ public class MybatisPlusMainTest {
     @Test
     void testUserMapper(){
         System.out.println( userMapper.queryAll() );
+
+        System.out.println("-------------------------");
+
+        System.out.println( userMapper.queryAll2() );
     }
 
 
