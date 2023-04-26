@@ -8,14 +8,14 @@ import lombok.Data;
 
 @Data
 @TableName("user")
-public class User {
+public class User2 {
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
 //    @TableField(value = "name")
     @TableField("name")
-    private String name;
+    private String name2;
     @TableField("age")
-    private Integer age;
+    private Integer age2;
     @TableField("email")
-    private String email;
+    private String email2;
 }
