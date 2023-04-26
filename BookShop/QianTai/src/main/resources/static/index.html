@@ -38,12 +38,12 @@
                 <!--图书类型列表-->
                 <div class="col-md-6">
                     <ol class="breadcrumb">
-                        <li >
-                            <a href="" >IT</a>
+                        <li v-for="type in bookTypeList" >
+                            <a href="" >{{type.name}}</a>
                         </li>
-                        <li >
-                            <a href="" >历史</a>
-                        </li>
+<!--                        <li >-->
+<!--                            <a href="" >历史</a>-->
+<!--                        </li>-->
                     </ol>
                 </div>
 
@@ -101,7 +101,7 @@
         el: "#publicHeader",
         data() {
             return {
-
+                bookTypeList:[]
             }
         },
         methods: {
@@ -123,11 +123,20 @@
                     })
 
             }
+            ,
+            initBookTypeList(){
+                axios.postForm("/booktype/all")
+                    .then((response)=>{
+                        publicHeaderVue.bookTypeList = response.data;
+                    })
+            }
         },
         created() {
             console.log("publicHeaderVue 对象创建完成了")
 
             this.refreshPublicContent("/topN")
+
+            this.initBookTypeList();
         }
 
     });
