@@ -10,13 +10,13 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-6 col-md-4" v-for="i in N" >
+      <div class="col-sm-6 col-md-4" v-for="(book,index) in topNBooks" >
         <div class="thumbnail">
-          <img src="/1.png" alt="..." class="col-sm-6 col-md-6" style="width: 140px;height: 130px">
+          <img :src="book.imgsrc" alt="..." class="col-sm-6 col-md-6" style="width: 140px;height: 130px">
           <div class="caption text-left">
-            <p>排名:<span >N</span></p>
-            <p>书名:<span >name</span></p>
-            <p>价格:<span >price</span></p>
+            <p>排名:<span v-text="index+1"></span></p>
+            <p>书名:<span v-text="book.name"></span></p>
+            <p>价格:<span v-text="book.price">price</span></p>
             <p>
               <a class="btn btn-primary" >详情</a> &nbsp;&nbsp;&nbsp;&nbsp;
               <a class="btn btn-success" >加入购物车</a>
