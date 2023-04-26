@@ -1,22 +1,18 @@
 package com.woniuxy.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.woniuxy.entity.User;
-import org.apache.ibatis.annotations.*;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author woniumrwang
+ * @since 2023-04-26 11:04:47
+ */
 @Mapper
-//public interface UserMapper {
-public interface UserMapper extends BaseMapper<User> {  //MyBatisPlus通过BaseMapper扩展功能
-
-    List<User> queryAll();
-
-//    @Update()
-//    @Delete()
-//    @Insert()
-    @Select("select * from user")
-    List<User> queryAll2();
-
+public interface UserMapper extends BaseMapper<User> {
 
 }

@@ -29,6 +29,7 @@
         <bookshop.version>1.0-SNAPSHOT</bookshop.version>
         <MyBatisPlus.version>3.5.1</MyBatisPlus.version>
         <druid.version>1.2.8</druid.version>
+        <velocity.version>2.3</velocity.version>
     </properties>
 
     <!--管理依赖版本-->
@@ -65,6 +66,20 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+
+
+            <!--mybatisPlus逆向生成代码-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${MyBatisPlus.version}</version>
+            </dependency>
+            <!--用于mybatisPlus逆向生成代码所需要的模板引擎-->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
             </dependency>
 
         </dependencies>
