@@ -35,6 +35,21 @@ public class BookController {
     }
 
 
+    @PostMapping("detail")
+    public Book detail(Long bookId){
+
+        //获取图书详情,并增加阅读量
+        Book currentBook = bookService.getById(bookId);
+        currentBook.setReadcount( currentBook.getReadcount()+1 );
+
+        //修改数据库中书籍的阅读量
+        Book echoBook = new Book();
+        echoBook.setId(currentBook.getId());
+        echoBook.setReadcount(currentBook.getReadcount());
+        bookService.updateById(echoBook);
+
+        return currentBook;
+    }
 
 
 }

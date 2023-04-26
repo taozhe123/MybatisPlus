@@ -1,0 +1,27 @@
+
+<div class="container-fluid" id="bookDetail" >
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <img :src="book.imgsrc" alt="...">
+      </div>
+    </div>
+
+    <div class= "col-md-8">
+      <p>书名 : <span >{{book.name}}</span></p>
+      <p>作者 : <span  >{{book.author}}</span></p>
+      <p>出版社 : <span  >{{book.provider}}</span></p>
+      <p>价格 : <span  >{{book.price}}</span></p>
+      <p>点击量 : <span  >{{book.readcount}}</span></p>
+      <p>简介 : <span  >{{book.detail}}</span></p>
+      <br/>
+      <br/>
+      <br/>
+      <a class="btn btn-success" >加入购物车</a>
+    </div>
+
+  </div>
+
+</div>

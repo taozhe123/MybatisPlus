@@ -109,13 +109,13 @@
 
                 axios.get(url+".html")
                     .then((response)=>{
-                        console.log(response.data)
+                        // console.log(response.data)
                         document.getElementById("publicContent").innerHTML=response.data;
 
                         //需要确保html加载完成后再执行js代码
                         axios.get(url+".js")
                             .then((response)=> {
-                                console.log(response.data)
+                                // console.log(response.data)
                                 //执行js代码
                                 eval(response.data)
                             })
