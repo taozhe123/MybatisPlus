@@ -38,8 +38,8 @@
                 <!--图书类型列表-->
                 <div class="col-md-6">
                     <ol class="breadcrumb">
-                        <li v-for="type in bookTypeList" >
-                            <a href="" >{{type.name}}</a>
+                        <li v-for="type in bookTypeList">
+                            <a href="" @click.prevent="showBooks(type.id,type.name)">{{type.name}}</a>
                         </li>
 <!--                        <li >-->
 <!--                            <a href="" >历史</a>-->
@@ -101,7 +101,7 @@
         el: "#publicHeader",
         data() {
             return {
-                bookTypeList:[]
+                bookTypeList:[],
             }
         },
         methods: {
@@ -129,6 +129,11 @@
                     .then((response)=>{
                         publicHeaderVue.bookTypeList = response.data;
                     })
+            },
+            showBooks(typeId,name) {
+                sessionStorage.setItem("typeName",name)
+                sessionStorage.setItem("typeId",typeId)
+                this.refreshPublicContent("booksOfType")
             }
         },
         created() {

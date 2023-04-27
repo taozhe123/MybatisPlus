@@ -1,6 +1,7 @@
 package com.woniuxy.qiantai.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.woniuxy.dal.entity.Book;
 import com.woniuxy.servicelayer.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,14 @@ public class BookController {
 
         return currentBook;
     }
+
+    @RequestMapping("listByType")
+    public List<Book> listByType(Long typeId) {
+        QueryWrapper<Book> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("typeId", typeId);
+        return bookService.list(queryWrapper);
+    }
+
 
 
 }

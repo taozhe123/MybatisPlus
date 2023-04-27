@@ -39,5 +39,12 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         return pageResult.getRecords();
     }
 
+    @Override
+    public List<Book> listByType(Long typeId) {
+        QueryWrapper<Book> wrapper = new QueryWrapper<>();
+        wrapper.eq("typeId", typeId);
+        return bookMapper.selectList(wrapper);
+    }
+
 
 }
